@@ -48,8 +48,8 @@ def print_results(results):
 
 def main():
   service = auth.build_bq_client() 
-  project_id = 'bigquery-e2e'
-  query = 'select * from temp.nested'
+  project_id = 'hirenpatelatl-learn-bigquery'
+  query = 'select * from [bigquery-e2e:reference.word_frequency] limit 100'
   run_query(service, project_id, query, print_results, timeout=1)
 
 if __name__ == "__main__":

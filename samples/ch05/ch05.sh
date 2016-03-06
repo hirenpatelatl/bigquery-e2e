@@ -15,7 +15,9 @@
 python auth.py
 
 ### Set a project ID. Substitute your project ID instead.
-export PROJECT_ID=bigquery-e2e
+#export PROJECT_ID=bigquery-e2e
+
+export PROJECT_ID=hirenpatelatl-learn-bigquery
 
 ### Setup some handy shortcuts.
 export BASE_URL=https://www.googleapis.com/bigquery/v2

@@ -33,6 +33,12 @@ def run_tour(service, project_id):
   tables = service.tables()
   tabledata = service.tabledata()
   jobs = service.jobs()
+  
+  print 'projects: ',  projects
+  print 'datasets: ', datasets
+  print 'tables: ', tables
+  print 'tabledata: ', tabledata
+  print 'jobs: ', jobs
 
   # Generate some IDs to use with the tour.
   tour = 'tour_%d' % (time.time())
@@ -146,7 +152,7 @@ def run_tour(service, project_id):
 
 def main(argv):
   service = auth.build_bq_client() 
-  project_id = 'bigquery-e2e' if len(argv) == 0 else argv[0]
+  project_id = 'hirenpatelatl-learn-bigquery' if len(argv) == 0 else argv[0]
   run_tour(service, project_id)
 
 if __name__ == '__main__':

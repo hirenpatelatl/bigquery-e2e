@@ -26,7 +26,8 @@ try:
   # Some systems may not have OpenSSL installed so can't use
   # SignedJwtAssertionCredentials.
   from oauth2client.client import SignedJwtAssertionCredentials
-  HAS_CRYPTO = true
+  HAS_CRYPTO = True
+  print 'HAS_CRYPTO: ', HAS_CRYPTO
 except ImportError:
   pass
 
@@ -34,13 +35,11 @@ from oauth2client import tools
 from oauth2client.file import Storage
 
 BIGQUERY_SCOPE = 'https://www.googleapis.com/auth/bigquery'
-# Set this to your project id.
-PROJECT_ID = 'hirenpatelatl-learn-bigquery'
 
 # Service account and keyfile only used for service account auth.
 SERVICE_ACCT = ('hirenpatelatlbigquery@hirenpatelatl-learn-bigquery.iam.gserviceaccount.com')
 # Set this to the full path to your service account private key file.
-KEY_FILE = '/home/docker/hirenpatelatl-learn-bigquery-591ea70c56fc.p12'
+KEY_FILE = '/home/key/service-account-key-hirenpatelatl-learn-bigquery.json'
 
 def get_creds():
   '''Get credentials for use in API requests.
@@ -59,7 +58,7 @@ def get_oauth2_creds():
   Will prompt the user to authorize the client when run the first time.
   Saves the credentials in ~/bigquery_credentials.dat.
   '''
-  flow  = flow_from_clientsecrets('/home/key/client_secret_other_1.json',
+  flow  = flow_from_clientsecrets('/home/key/hirenpatelatl-learn-bigquery-0e63719925e8.json',
                                   scope=BIGQUERY_SCOPE)
   storage = Storage(os.path.expanduser('~/bigquery_credentials.dat'))
   credentials = storage.get()
@@ -109,5 +108,5 @@ def main():
   print_creds(get_creds())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
