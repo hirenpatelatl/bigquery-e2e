@@ -6,7 +6,7 @@
 
 import auth
 import pprint
-project_id = 'bigquery-e2e'
+project_id = 'hirenpatelatl-learn-bigquery'
 service = auth.build_bq_client()
 response = service.jobs().query(
     projectId=project_id,

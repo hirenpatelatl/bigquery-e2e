@@ -34,13 +34,11 @@ from oauth2client import tools
 from oauth2client.file import Storage
 
 BIGQUERY_SCOPE = 'https://www.googleapis.com/auth/bigquery'
-# Set this to your project id.
-PROJECT_ID = 'hirenpatelatl-learn-bigquery'
 
 # Service account and keyfile only used for service account auth.
-SERVICE_ACCT = ('hirenpatelatlbigquery@hirenpatelatl-learn-bigquery.iam.gserviceaccount.com')
+SERVICE_ACCT = ('<service account id>@developer.gserviceaccount.com')
 # Set this to the full path to your service account private key file.
-KEY_FILE = '/home/docker/hirenpatelatl-learn-bigquery-591ea70c56fc.p12'
+KEY_FILE = 'key.p12'
 
 def get_creds():
   '''Get credentials for use in API requests.
@@ -59,7 +57,7 @@ def get_oauth2_creds():
   Will prompt the user to authorize the client when run the first time.
   Saves the credentials in ~/bigquery_credentials.dat.
   '''
-  flow  = flow_from_clientsecrets('/home/key/client_secret_other_1.json',
+  flow  = flow_from_clientsecrets('client_secrets.json',
                                   scope=BIGQUERY_SCOPE)
   storage = Storage(os.path.expanduser('~/bigquery_credentials.dat'))
   credentials = storage.get()
