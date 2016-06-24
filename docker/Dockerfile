@@ -1,0 +1,9 @@
+FROM google/cloud-sdk
+RUN apt-get update && apt-get install -y git vim python-pip
+RUN pip install --upgrade google-api-python-client
+RUN git config --global user.email "hirenpatelatl@gmail.com"
+RUN git config --global user.name "hirenpatelatl"
+RUN cd /home
+RUN git clone https://github.com/hirenpatelatl/bigquery-e2e.git
+EXPOSE 8080
+
