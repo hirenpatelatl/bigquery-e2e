@@ -4,5 +4,4 @@ RUN pip install --upgrade google-api-python-client
 WORKDIR /home
 COPY . /home/bigquery-e2e
 WORKDIR /home/bigquery-e2e/samples
-EXPOSE 8080
 
